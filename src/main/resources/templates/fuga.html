@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link th:href="@{css/fuga.css}" rel="stylesheet" type="text/css" >
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-	<div>
-		ホーム
+	<div class="main">
+		<div>
+			ホーム
+		</div>
+		<div>
+			<img src="/image/sample.jpg">
+			<textarea placeholder="今どうしてる？"></textarea>
+			<button tyoe="submit">ツイートする</button>
+		</div>
+		<div>
+			<img src="/image/sample.jpg">
+			<a href="/hoge">テストユーザ01</a>
+			<span>@testuser01</span>
+			<span>1時間</span>
+			<span>内容</span>
+		</div>
 	</div>
-	<div>
-		<img src="../image/sample.jpg">
-	</div>
-	</body>
 	<a href="/hoge">GO TO HOGE.</a>
 </body>
 </html>
