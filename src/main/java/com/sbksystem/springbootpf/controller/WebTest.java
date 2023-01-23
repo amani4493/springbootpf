@@ -14,8 +14,8 @@ public class WebTest {
 		return "hoge.html";
 	}
 	
-	@GetMapping("/fuga")
+	@GetMapping("/home")
 	public String fuga() {
-		return "fuga.html";
+		return "home.html";
 	}
 }

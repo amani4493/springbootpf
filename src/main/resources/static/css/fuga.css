@@ -1,0 +1,59 @@
+body{
+     margin: 0;
+}
+.main {
+/*	background-color: red;*/
+/*        margin-top: 0;*/
+/*        margin-left: auto;*/
+/*        margin-right: 30%;*/
+/*        width: 40em;*/
+	width: 50%;
+	margin:0 auto;	
+    border-left:solid 0.5px #dcdcdc;
+    border-right:solid 0.5px #dcdcdc;
+    height:100vh;
+}
+.title{
+      border-bottom:solid 0.5px #dcdcdc;
+}
+.contents{
+	  border:solid 0;
+	  border-color:#dcdcdc;
+	  padding:0;
+/*	  background-color: blue;*/
+	  width: 95%;
+	  height: 90px;
+	  margin-left:5%;
+	  
+	  display:block;
+}
+.tweetbutton{
+	width: 15%;
+	margin-left: 85%;
+	height: 4vh;
+
+
+}
+
+.timeline{
+          border-bottom:solid 0.5px #dcdcdc;
+/*	  background-color: yellow;*/
+}
+.icon{
+/*      background-color: blue;*/
+	  margin-right: 95%;
+      float:left;
+      width: 5%;
+}
+.tweet{
+       display:flex;
+       margin-left: 25px;
+}
+
+.tweet_area {
+	border-bottom:solid 0.5px #dcdcdc;	
+}
+.tweet_border {
+	border-bottom:solid 0.5px #dcdcdc;
+/*	margin-top:10%;*/
+}
