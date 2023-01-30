@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<link href="../css/fuga.css" rel="stylesheet" type="text/css" >
 <meta charset="UTF-8">
@@ -20,7 +20,7 @@
 		<div>
 			<div  class="timeline">
 	    		<img src="/image/sample.jpg" class="icon">
-				<a href="/hoge">にゃんこユーザ01</a>
+				<a href="/hoge" th:text="${message[0].name}">にゃんこユーザ01</a>
 				<span>@nyankouser01</span>
 				<span>1時間</span>
 				<span class="tweet">内容<br>aaaa<br>ssss<br>hhhh</span>

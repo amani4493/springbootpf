@@ -19,6 +19,7 @@ public class UserService {
 	
 	public List<User> getAll() {
 		
+		//DBから取得？
 		List<User> userList = userRepository.findAll();
 		
 		return userList
