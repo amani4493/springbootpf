@@ -7,7 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.sbksystem.springbootpf.entity.Tweet;
 import com.sbksystem.springbootpf.entity.User;
+import com.sbksystem.springbootpf.service.TweetService;
 import com.sbksystem.springbootpf.service.UserService;
 
 
@@ -17,6 +19,7 @@ public class WebTest {
 	
 	@Autowired
 	UserService UserService;
+	TweetService TweetService;
 
 	// エンドポイントの指定（今回は/hoge）
 	@GetMapping("/hoge")
@@ -31,4 +34,11 @@ public class WebTest {
 		model.addAttribute("message",userList);
 		return "home.html";
 	}
+	@GetMapping("/home")
+	public String tweets(Model model) {
+		List<Tweet>tweets = TweetService.getAll();
+		model.addAttribute("tweets",tweets);
+		return "home.html";
+	}
 }
+

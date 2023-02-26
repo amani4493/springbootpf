@@ -13,17 +13,21 @@
 		<div class="tweet_area">
 			<img src="/image/sample.jpg" class="icon">
 			<div class="tweet_border">
-				<textarea placeholder="今どうしてる？" class="contents"></textarea>
+				<form th;action="{/user/tweet}"th:object="${tweet}"th:method="post">
+				<input type="text" placeholder="今どうしてる？" class="contents">
+				</input>
 			</div>
+			</form>
 			<button tyoe="submit" class="tweetbutton">ツイートする</button>
 		</div>
 		<div>
-			<div  class="timeline">
-	    		<img src="/image/sample.jpg" class="icon">
-				<a href="/hoge" th:text="${message[0].name}">にゃんこユーザ01</a>
+			<div  class="timeline" th:each="tweet : ${tweets}">
+	    		<!--<img src="/image/sample.jpg" class="icon">-->
+				<!--<a href="/hoge" th:text="${message[0].name}">-->
+				<a href="/hoge" th:text="${tweet.user_id}"></a>>にゃんこユーザ01</a>
 				<span>@nyankouser01</span>
-				<span>1時間</span>
-				<span class="tweet">内容<br>aaaa<br>ssss<br>hhhh</span>
+				<span th:text="${tweet.created_at}">1時間</span>
+				<span class="tweet" th:text"${tweet.body}">内容<br>aaaa<br>ssss<br>hhhh</span>
 			</div>
 		 </div>
 	</div>
