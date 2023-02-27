@@ -28,17 +28,21 @@ public class WebTest {
 		return "hoge.html";
 	}
 	
+	//エンドポイントhome指定時
+	//UserServiceとTweetServiceのデータをmessageとtweetsに入れてhome.htmlを返す
+	//表記これであってるかは不明
 	@GetMapping("/home")
 	public String username(Model model) {
 		List<User>userList = UserService.getAll();
 		model.addAttribute("message",userList);
-		return "home.html";
-	}
-	@GetMapping("/home")
-	public String tweets(Model model) {
 		List<Tweet>tweets = TweetService.getAll();
 		model.addAttribute("tweets",tweets);
 		return "home.html";
 	}
-}
+
+	/*@PostMapping("/user/tweet")*/
+	
+}	
+
+
 
