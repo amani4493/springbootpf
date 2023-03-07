@@ -29,7 +29,7 @@ public class Tweet {
 			Long id,
 			Long user_id,
 			String body,
-			Date parent_id,
+			Long parent_id,
 			Date created_at,
 			Date updated_at
 	) {
@@ -56,7 +56,7 @@ public class Tweet {
 	
 	@Column(nullable=false)
 	@JsonProperty("parent_id")
-	private Date parent_id;
+	private Long parent_id;
 	
 	@Column(nullable=false)
 	@JsonProperty("created_at")

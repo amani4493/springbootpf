@@ -24,10 +24,12 @@
 			<div  class="timeline" th:each="tweet : ${tweets}">
 	    		<!--<img src="/image/sample.jpg" class="icon">-->
 				<!--<a href="/hoge" th:text="${message[0].name}">-->
-				<a href="/hoge" th:text="${tweet.user_id}"></a>>にゃんこユーザ01</a>
-				<span>@nyankouser01</span>
+				<!--ユーザーの表示-->
+				<span th:text="${tweet.user_id}">@user01</span>
+				<!--投稿時間の表示-->
 				<span th:text="${tweet.created_at}">1時間</span>
-				<span class="tweet" th:text"${tweet.body}">内容<br>aaaa<br>ssss<br>hhhh</span>
+				<!--ツイート内容の表示-->
+				<span th:text="${tweet.body}" class="tweet">内容</span>
 			</div>
 		 </div>
 	</div>

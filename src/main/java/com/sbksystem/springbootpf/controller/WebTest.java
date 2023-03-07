@@ -19,7 +19,8 @@ public class WebTest {
 	
 	@Autowired
 	UserService UserService;
-	TweetService TweetService;
+	@Autowired
+	TweetService tweetService;
 
 	// エンドポイントの指定（今回は/hoge）
 	@GetMapping("/hoge")
@@ -35,7 +36,7 @@ public class WebTest {
 	public String username(Model model) {
 		List<User>userList = UserService.getAll();
 		model.addAttribute("message",userList);
-		List<Tweet>tweets = TweetService.getAll();
+		List<Tweet>tweets = tweetService.getAll();
 		model.addAttribute("tweets",tweets);
 		return "home.html";
 	}
