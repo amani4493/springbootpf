@@ -13,23 +13,27 @@
 		<div class="tweet_area">
 			<img src="/image/sample.jpg" class="icon">
 			<div class="tweet_border">
+				<!--ツイート投稿部分-->
+				<!--controllerの/user/tweetにpostメソッドでform内の情報を送信-->
 				<form th;action="{/user/tweet}"th:object="${tweet}"th:method="post">
 				<input type="text" placeholder="今どうしてる？" class="contents">
+				<button tyoe="submit" class="tweetbutton">ツイートする</button>
 				</input>
 			</div>
 			</form>
-			<button tyoe="submit" class="tweetbutton">ツイートする</button>
 		</div>
 		<div>
+			<!--ツイートの表示部分th:eachでdiv class"timeline"を繰り返し表示-->
 			<div  class="timeline" th:each="tweet : ${tweets}">
 	    		<!--<img src="/image/sample.jpg" class="icon">-->
-				<!--<a href="/hoge" th:text="${message[0].name}">-->
+				<a href="/hoge" th:text="${message[0].name}">
 				<!--ユーザーの表示-->
-				<span th:text="${tweet.user_id}">@user01</span>
+				<!--ツイートテーブルが表示されない-->
+				<span th:text="${tweets.user_id}">@user01</span>
 				<!--投稿時間の表示-->
-				<span th:text="${tweet.created_at}">1時間</span>
+				<span th:text="${tweets.created_at}">1時間</span>
 				<!--ツイート内容の表示-->
-				<span th:text="${tweet.body}" class="tweet">内容</span>
+				<span th:text="${tweets.body}" class="tweet">内容</span>
 			</div>
 		 </div>
 	</div>

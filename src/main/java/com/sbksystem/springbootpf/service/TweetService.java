@@ -33,5 +33,9 @@ public class TweetService {
 					)
 				 	.collect(Collectors.toList());
 	}
+	
+	public void save(Tweet tweet) {
+		tweetRepository.save(tweet);
+	}
 
 }
