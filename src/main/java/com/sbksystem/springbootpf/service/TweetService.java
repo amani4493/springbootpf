@@ -1,7 +1,6 @@
 package com.sbksystem.springbootpf.service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,18 +19,18 @@ public class TweetService {
 		//DBから取得
 		List<Tweet> tweets = tweetRepository.findAll();
 		
-		return tweets
-				.stream()
-				.map(tweet -> new Tweet(
-						tweet.getId(),
-						tweet.getUser_id(),
-						tweet.getBody(),
-						tweet.getParent_id(),
-						tweet.getCreated_at(),
-						tweet.getUpdated_at()
-						)
-					)
-				 	.collect(Collectors.toList());
+		return tweets;
+//				.stream()
+//				.map(tweet -> new Tweet(
+//						tweet.getId(),
+//						tweet.getUser_id(),
+//						tweet.getBody(),
+//						tweet.getParent_id(),
+//						tweet.getCreated_at(),
+//						tweet.getUpdated_at()
+//						)
+//					)
+//				 	.collect(Collectors.toList());
 	}
 	
 	public void save(Tweet tweet) {

@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -22,6 +23,7 @@ public class WebTest {
 	
 	@Autowired
 	UserService UserService;
+	@Autowired
 	TweetService TweetService;
 
 	// エンドポイントの指定（今回は/hoge）
@@ -43,7 +45,7 @@ public class WebTest {
 		return "home.html";
 	}
 	@PostMapping("/user/tweet")
-	public String saveTweet(@Valid Tweet tweet, /*BindingResult result.*/ Model model,User user) {
+	public String saveTweet(@Valid Tweet tweet, BindingResult result, Model model,User user) {
 //		BindingResultについて聞く
 //		if(result.hasErros()) {
 //			return "home.html";
@@ -54,6 +56,16 @@ public class WebTest {
 		//user_idの送信方法はこれで合ってる？
 		tweet.setUser_id((long) 1);
 		//戻り値の指定はどこにすればいいか。
+		
+		// ツイートの保存
+		TweetService.save(tweet);
+		
+		// /homeを表示するのに必要な情報
+		List<User>userList = UserService.getAll();
+		model.addAttribute("message",userList);
+		List<Tweet>tweets = TweetService.getAll();
+		model.addAttribute("tweets",tweets);
+		
 		return "home.html";
 	}
 	
